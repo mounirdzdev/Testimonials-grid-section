@@ -1,4 +1,4 @@
-# 🌐 [Nom du projet]
+# 🌐 [Testimonials grid section]
 
 > A responsive website built with HTML and CSS, following a mobile-first approach.
 
@@ -134,10 +134,10 @@ Possible improvements for future versions include:
 
 ## 👨‍💻 Author
 
-**[Your Name]**
+**[mounirdzdev]**
 
-* GitHub: [Your GitHub Profile]
-* LinkedIn: [Your LinkedIn Profile]
+* GitHub: https://github.com/mounirdzdev/Testimonials-grid-section
+* LinkedIn: [https://mounirdzdev.github.io/Testimonials-grid-section/]
 
 ## 📄 License
 
