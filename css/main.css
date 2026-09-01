@@ -32,36 +32,48 @@ body {
   background-color: #f6f5f6;
 }
 
-
 .container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    padding-inline: 20px;
-    padding-block: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-inline: 20px;
+  padding-block: 20px;
+  
+}
+.container .image {
+   display: none;
 }
 
 .content {
-    width: min(100%, 375px);
+  position: relative;
+  width: min(100%, 305px);
 
-    display: grid;
-    gap: var(--spacing-400);
+  display: grid;
+  gap: var(--spacing-400);
 
-    grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
-    grid-template-areas:
-        "card1 card1 card1 card1"
-        "card2 card2 card2 card2"
-        "card3 card3 card3 card3"
-        "card4 card4 card4 card4"
-        "card5 card5 card5 card5";
+  grid-template-areas:
+    "card1 card1 card1 card1"
+    "card2 card2 card2 card2"
+    "card3 card3 card3 card3"
+    "card4 card4 card4 card4"
+    "card5 card5 card5 card5";
 }
 @media (min-width: 678px) {
- .container {
-   padding-inline: 40px;
+  .container {
+    padding-inline: 40px;
     padding-block: 40px;
- }
+  }
+  .container .image {
+     display: block;
+    position: absolute;
+    top: 0;
+    right: 166px;
+    margin: 0;
+    z-index: 1;
+}
   .content {
     width: min(100%, 647px);
     grid-template-columns: repeat(8, 1fr);
@@ -80,6 +92,14 @@ body {
       "card1 card1 card1 card1 card1 card1 card2 card2 card2 card5 card5 card5"
       "card3 card3 card3 card4 card4 card4 card4 card4 card4 card5 card5 card5";
   }
+  .container .image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 632px;
+    margin: 0;
+    z-index: 1;
+}
 }
 .content .card {
   padding: var(--spacing-400);
@@ -91,7 +111,10 @@ body {
 .content .card1 {
   grid-area: card1;
   background-color: var(--color-purple-500);
+  position: relative;
 }
+
+
 
 .content .card2 {
   grid-area: card2;
@@ -110,12 +133,10 @@ body {
   background-color: var(--color-white);
 }
 
-.content .card1 img
-{
+.content .card1 .profile img {
   border: 2px solid var(--color-purple-300);
 }
-.content .card4 img
-{
+.content .card4 .profile img {
   border: 2px solid var(--color-purple-500);
 }
 .content .profile {
@@ -130,7 +151,7 @@ body {
   align-items: flex-start;
   gap: var(--spacing-50);
 }
-.content .card img {
+.content .card .profile img {
   width: 1.75rem;
   border-radius: 50%;
 }
@@ -165,41 +186,39 @@ body {
   color: var(--color-grey-300);
 }
 
-.content .card :nth-child(2){
+.content .card :nth-child(2) {
   margin: 0;
   font: var(--text-preset-1);
 }
-.content .card :nth-child(3){
+.content .card :nth-child(3) {
   margin: 0;
   font: var(--text-preset-3);
 }
 
-.content .card1 :nth-child(2),.content .card2 :nth-child(2){
+.content .card1 :nth-child(2),
+.content .card2 :nth-child(2) {
   color: var(--color-white);
+  z-index: 1;
 }
-.content .card3 :nth-child(2),.content .card5 :nth-child(2){
+.content .card3 :nth-child(2),
+.content .card5 :nth-child(2) {
   color: var(--color-grey-500);
 }
-.content .card4 :nth-child(2){
- color: var(--color-grey-200);
+.content .card4 :nth-child(2) {
+  color: var(--color-grey-200);
 }
 
-.content .card1 :nth-child(3){
-
+.content .card1 :nth-child(3) {
   color: var(--color-purple-50);
-  
 }
-.content .card2 :nth-child(3),.content .card4 :nth-child(3){
-
+.content .card2 :nth-child(3),
+.content .card4 :nth-child(3) {
   color: var(--color-grey-100);
-  
 }
-.content .card3 :nth-child(3),.content .card5 :nth-child(3){
-
+.content .card3 :nth-child(3),
+.content .card5 :nth-child(3) {
   color: var(--color-grey-400);
-  
 }
 /* .content .card :nth-of-type(p){
 
 } */
-
